@@ -26,7 +26,6 @@
     "allowSyntheticDefaultImports": true,
     "forceConsistentCasingInFileNames": false,
     "noErrorTruncation": true,
-    "noStrictGenericChecks": true,
     "useUnknownInCatchVariables": false,
     "downlevelIteration": true,
     "noImplicitThis": false

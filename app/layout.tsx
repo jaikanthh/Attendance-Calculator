@@ -7,7 +7,7 @@ import { Footer } from "@/components/footer"
 import { Metadata } from "next"
 
 // Force static generation
-export const dynamic = "force-static"
+// export const dynamic = "force-static"
 
 // Font for headings
 const poppins = Poppins({ 

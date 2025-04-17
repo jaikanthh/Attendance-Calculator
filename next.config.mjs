@@ -20,7 +20,6 @@ const nextConfig = {
     ignoreBuildErrors: true,
   },
   images: {
-    unoptimized: true,
     remotePatterns: [
       {
         protocol: 'https',
@@ -30,8 +29,8 @@ const nextConfig = {
   },
   // Hide the "powered by Vercel" widget
   poweredByHeader: false,
-  // Generate static HTML export
-  output: 'export',
+  // Removed static export for Vercel compatibility
+  // output: 'export',
 }
 
 if (userConfig) {

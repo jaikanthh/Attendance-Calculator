@@ -1,7 +1,7 @@
 'use client'
 
 // Force static generation for export
-export const dynamic = "force-static"
+// export const dynamic = "force-static"
 
 import { useState, FormEvent, useEffect } from 'react'
 import { motion } from 'framer-motion'

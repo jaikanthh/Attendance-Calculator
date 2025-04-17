@@ -8,7 +8,7 @@ import { Calculator, BookOpen, GraduationCap, AlertCircle } from "lucide-react"
 import Script from 'next/script'
 
 // Force static generation for export
-export const dynamic = "force-static"
+// export const dynamic = "force-static"
 
 export default function WelcomePage() {
   const jsonLd = {
