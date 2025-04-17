@@ -7,6 +7,9 @@ import Link from "next/link"
 import { Calculator, BookOpen, GraduationCap, AlertCircle } from "lucide-react"
 import Script from 'next/script'
 
+// Force static generation for export
+export const dynamic = "force-static"
+
 export default function WelcomePage() {
   const jsonLd = {
     '@context': 'https://schema.org',
@@ -108,9 +111,11 @@ export default function WelcomePage() {
                 </ul>
               </CardContent>
               <CardFooter className="mt-auto pt-2">
-                <Link href="/simple" className="w-full">
-                  <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700">Use Simple Calculator</Button>
-                </Link>
+                <div className="w-full">
+                  <Link href="/simple">
+                    <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700">Use Simple Calculator</Button>
+                  </Link>
+                </div>
               </CardFooter>
             </Card>
           </div>
@@ -154,9 +159,11 @@ export default function WelcomePage() {
                 </ul>
               </CardContent>
               <CardFooter className="mt-auto pt-2">
-                <Link href="/ltps" className="w-full">
-                  <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700">Use LTPS Calculator</Button>
-                </Link>
+                <div className="w-full">
+                  <Link href="/ltps">
+                    <Button className="w-full bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700">Use LTPS Calculator</Button>
+                  </Link>
+                </div>
               </CardFooter>
             </Card>
           </div>

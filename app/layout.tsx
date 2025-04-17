@@ -4,6 +4,7 @@ import { Poppins, Outfit } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import { Footer } from "@/components/footer"
+import { Metadata } from "next"
 
 // Force static generation
 export const dynamic = "force-static"
@@ -22,7 +23,7 @@ const outfit = Outfit({
   variable: "--font-outfit",
 })
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "KL University Attendance Calculator",
   description: "Calculate your attendance percentage and check eligibility for KL University exams based on university policy. Simple and LTPS calculators available.",
   generator: 'Next.js',
@@ -75,7 +76,7 @@ export const metadata = {
     images: ['/KL_University_logo.svg'],
   },
   verification: {
-    google: 'google-site-verification-code', // Replace with actual verification code
+    google: 'YKmd0c6z13AOdpU7THbo1wqIqG4BBzjilNPhP-5_bps',
   },
   icons: {
     icon: '/KL_University_logo.svg',
