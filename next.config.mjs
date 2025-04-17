@@ -29,8 +29,8 @@ const nextConfig = {
   },
   // Hide the "powered by Vercel" widget
   poweredByHeader: false,
-  // Enable static export for local testing
-  output: 'export',
+  // Middleware doesn't work with static export
+  // output: 'export',
 }
 
 if (userConfig) {
