@@ -1,6 +1,6 @@
 // Type declarations for Next.js modules
 
-import { FC, ComponentProps, ReactElement, ReactNode } from 'react';
+import React, { FC, ComponentProps, ReactElement, ReactNode } from 'react';
 
 declare module 'next/font/google' {
   interface FontOptions {
