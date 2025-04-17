@@ -29,8 +29,8 @@ const nextConfig = {
   },
   // Hide the "powered by Vercel" widget
   poweredByHeader: false,
-  // Removed static export for Vercel compatibility
-  // output: 'export',
+  // Enable static export for local testing
+  output: 'export',
 }
 
 if (userConfig) {
