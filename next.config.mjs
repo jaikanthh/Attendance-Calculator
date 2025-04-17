@@ -21,6 +21,12 @@ const nextConfig = {
   },
   images: {
     unoptimized: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'fonts.googleapis.com',
+      },
+    ],
   },
   // Hide the "powered by Vercel" widget
   poweredByHeader: false,

@@ -1,9 +1,12 @@
-import type React from "react"
+import type { ReactNode } from "react"
 import "@/app/globals.css"
 import { Poppins, Outfit } from "next/font/google"
 import { ThemeProvider } from "@/components/theme-provider"
 import Header from "@/components/header"
 import { Footer } from "@/components/footer"
+
+// Force static generation
+export const dynamic = "force-static"
 
 // Font for headings
 const poppins = Poppins({ 
@@ -41,13 +44,13 @@ export const metadata = {
   openGraph: {
     title: 'KL University Attendance Calculator',
     description: 'Calculate your attendance percentage and check eligibility for KL University exams based on university policy.',
-    url: 'https://attendance-calculator.vercel.app',
+    url: 'https://klattendance.vercel.app',
     siteName: 'KL University Attendance Calculator',
     images: [
       {
-        url: '/og-image.jpg',
-        width: 1200,
-        height: 630,
+        url: '/KL_University_logo.svg',
+        width: 800,
+        height: 600,
         alt: 'KL University Attendance Calculator',
       },
     ],
@@ -69,7 +72,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'KL University Attendance Calculator',
     description: 'Calculate your attendance percentage and check eligibility for KL University exams based on university policy.',
-    images: ['/og-image.jpg'],
+    images: ['/KL_University_logo.svg'],
   },
   verification: {
     google: 'google-site-verification-code', // Replace with actual verification code
@@ -96,7 +99,7 @@ export const metadata = {
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: ReactNode
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
