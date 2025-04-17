@@ -5,10 +5,35 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Calculator, BookOpen, GraduationCap, AlertCircle } from "lucide-react"
+import Script from 'next/script'
 
 export default function WelcomePage() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebApplication',
+    name: 'KL University Attendance Calculator',
+    description: 'Calculate your attendance percentage and check eligibility for KL University exams based on the University attendance policy.',
+    applicationCategory: 'EducationalApplication',
+    operatingSystem: 'Web',
+    offers: {
+      '@type': 'Offer',
+      price: '0',
+      priceCurrency: 'USD'
+    },
+    creator: {
+      '@type': 'Organization',
+      name: 'KL University',
+      url: 'https://www.kluniversity.in/'
+    }
+  }
+
   return (
     <div className="flex flex-col items-center justify-center w-full max-w-full">
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <motion.div 
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
