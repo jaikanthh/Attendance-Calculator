@@ -44,6 +44,13 @@ export default function SimpleCalculatorPage() {
     }
   }, [])
 
+  // Hide results when input values change
+  useEffect(() => {
+    if (formSubmitted) {
+      setShowResult(false)
+    }
+  }, [totalClasses, presents])
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormSubmitted(true)
@@ -57,16 +64,38 @@ export default function SimpleCalculatorPage() {
 
   const saveResult = (totalClasses: number, presents: number, subject: string) => {
     const percentage = (presents / totalClasses) * 100
-    const newResult: SavedResult = {
-      id: Date.now().toString(),
-      subject,
-      totalClasses,
-      presents,
-      percentage,
-      date: new Date().toLocaleDateString()
+    
+    // Check if a draft with the same subject name already exists
+    const existingDraftIndex = savedResults.findIndex(result => 
+      result.subject.toLowerCase() === subject.toLowerCase()
+    )
+    
+    let updatedResults
+    
+    if (existingDraftIndex !== -1) {
+      // Update existing draft
+      updatedResults = [...savedResults]
+      updatedResults[existingDraftIndex] = {
+        ...updatedResults[existingDraftIndex],
+        totalClasses,
+        presents,
+        percentage,
+        date: new Date().toLocaleDateString()
+      }
+    } else {
+      // Create new draft
+      const newResult: SavedResult = {
+        id: Date.now().toString(),
+        subject,
+        totalClasses,
+        presents,
+        percentage,
+        date: new Date().toLocaleDateString()
+      }
+      
+      updatedResults = [...savedResults, newResult]
     }
     
-    const updatedResults = [...savedResults, newResult]
     setSavedResults(updatedResults)
     
     // Save to cookies

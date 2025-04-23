@@ -57,6 +57,13 @@ export default function LTPSCalculatorPage() {
     }
   }, [])
 
+  // Hide results when input values change
+  useEffect(() => {
+    if (formSubmitted) {
+      setShowResult(false)
+    }
+  }, [components])
+
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setFormSubmitted(true)
@@ -98,15 +105,36 @@ export default function LTPSCalculatorPage() {
 
   const saveResult = (subject: string) => {
     const finalPercentage = calculateFinalPercentage()
-    const newResult: SavedResult = {
-      id: Date.now().toString(),
-      subject,
-      components: JSON.parse(JSON.stringify(components)), // Deep copy to avoid reference issues
-      finalPercentage,
-      date: new Date().toLocaleDateString()
+    
+    // Check if a draft with the same subject name already exists
+    const existingDraftIndex = savedResults.findIndex(result => 
+      result.subject.toLowerCase() === subject.toLowerCase()
+    )
+    
+    let updatedResults
+    
+    if (existingDraftIndex !== -1) {
+      // Update existing draft
+      updatedResults = [...savedResults]
+      updatedResults[existingDraftIndex] = {
+        ...updatedResults[existingDraftIndex],
+        components: JSON.parse(JSON.stringify(components)), // Deep copy to avoid reference issues
+        finalPercentage,
+        date: new Date().toLocaleDateString()
+      }
+    } else {
+      // Create new draft
+      const newResult: SavedResult = {
+        id: Date.now().toString(),
+        subject,
+        components: JSON.parse(JSON.stringify(components)), // Deep copy to avoid reference issues
+        finalPercentage,
+        date: new Date().toLocaleDateString()
+      }
+      
+      updatedResults = [...savedResults, newResult]
     }
     
-    const updatedResults = [...savedResults, newResult]
     setSavedResults(updatedResults)
     
     // Save to cookies
