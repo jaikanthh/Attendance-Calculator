@@ -1,4 +1,10 @@
 {
   "name": "KLUAttendanceMobile",
-  "slug": "KLUAttendanceMobile"
+  "slug": "KLUAttendanceMobile",
+  "version": "1.0.0",
+  "orientation": "portrait",
+  "newArchEnabled": true,
+  "ios": {
+    "bundleIdentifier": "com.anonymous.KLUAttendanceMobile"
+  }
 }
