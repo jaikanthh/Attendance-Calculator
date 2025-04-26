@@ -1,8 +1,6 @@
-# KLU Attendance Calculator
+# KLU Attendance Calculator Mobile App
 
-A modern, responsive web application for KLU students to calculate their attendance percentages, track eligibility, and manage saved calculations.
-
-![KLU Attendance Calculator](public/KL_University_logo.svg)
+A mobile application for KLU students to calculate their attendance percentages, track eligibility, and manage saved calculations.
 
 ## Features
 
@@ -11,89 +9,53 @@ A modern, responsive web application for KLU students to calculate their attenda
 - **Attendance Analysis**: Check eligibility status based on university attendance requirements (75% and 85%)
 - **Save Calculations**: Save your calculations as drafts with subject names
 - **Draft Management**: View, load, and delete saved drafts
-- **Responsive Design**: Works on all devices from mobile to desktop
-- **Dark/Light Mode**: Toggle between color themes
+- **Responsive Design**: Optimized for both iOS and Android devices
 
-## Technologies Used
-
-- **Next.js 15**: React framework for production
-- **React 19**: UI library
-- **TypeScript**: Type-safe JavaScript
-- **Tailwind CSS**: Utility-first CSS framework
-- **Framer Motion**: Animation library
-- **Radix UI**: Accessible component primitives
-- **js-cookie**: Cookie management for saved drafts
-
-## Getting Started
-
-### Prerequisites
+## Prerequisites
 
 - Node.js 18.17 or later
-- npm or yarn or pnpm
+- npm or yarn
+- iOS: Xcode 13 or later (for iOS development)
+- Android: Android Studio (for Android development)
 
-### Installation
+## Installation
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/klu-attendance-calculator.git
-   cd klu-attendance-calculator
+   git clone https://github.com/your-username/klu-attendance-calculator-mobile.git
+   cd klu-attendance-calculator-mobile
    ```
 
 2. Install dependencies:
    ```bash
    npm install
-   # or
-   yarn install
-   # or
-   pnpm install
    ```
 
-3. Run the development server:
+3. Start the development server:
    ```bash
-   npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
+   npm start
    ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
-
-## Usage
-
-### Simple Calculator
-
-1. Navigate to the Simple Calculator page
-2. Enter the total number of classes
-3. Enter the number of classes attended
-4. Enter subject name (optional, for saving)
-5. Click "Calculate" to see your attendance percentage and eligibility status
-
-### LTPS Calculator
-
-1. Navigate to the LTPS Calculator page
-2. Enter attendance percentages for each component (Lecture, Tutorial, Practical, Skilling)
-3. Enter subject name (optional, for saving)
-4. Click "Calculate" to see your weighted attendance percentage and eligibility status
-
-### Managing Saved Drafts
-
-- Saved drafts appear below the calculator
-- Click on a draft to load its values into the calculator
-- Click the "X" button to delete a draft
-
-## Deployment
-
-The project is configured for static export and can be deployed to any static hosting platform:
-
-1. Build the project:
+4. Run on iOS:
    ```bash
-   npm run build
+   npm run ios
    ```
 
-2. The `out` directory will contain the static files for deployment
+5. Run on Android:
+   ```bash
+   npm run android
+   ```
 
-3. Upload the contents of the `out` directory to your hosting provider
+## Building for Production
+
+### iOS
+1. Open the project in Xcode
+2. Select your target device
+3. Click the "Build" button or press Cmd + B
+
+### Android
+1. Open the project in Android Studio
+2. Click "Build" > "Build Bundle(s) / APK(s)" > "Build APK(s)"
 
 ## Contributing
 
