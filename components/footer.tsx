@@ -10,7 +10,7 @@ export function Footer() {
             <p className="text-sm text-muted-foreground">
               Built and developed by{" "}
               <a 
-                href="https://jaikanthh.github.io/portfolio-website/" 
+                href="https://jayakanthkamisetti.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="font-medium text-foreground hover:text-red-500 transition-colors"
